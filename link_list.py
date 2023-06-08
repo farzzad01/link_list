@@ -45,7 +45,32 @@ class LinkedList:
             current = current.next
 
 
+def main():
+    num_students = int(input("Enter the number of students: "))
+    student_list = LinkedList()
 
+    for _ in range(num_students):
+        name = input("Enter name: ")
+        lastname = input("Enter lastname: ")
+        student_number = input("Enter student number: ")
+        student_list.add_student(name, lastname, student_number)
+        print('----------------------------------------')
+
+    print("\nStudent list:")
+    print('----------------------------------------')
+    student_list.display_students()
+
+    while True:
+        delete_student_number = input("\nEnter student number to delete (or press to quit): ")
+        if delete_student_number == '':
+            break
+        else:
+            student_list.delete_student(delete_student_number)
+            print("\nUpdated student list:")
+            print('--------------------------------')
+            student_list.display_students()
+
+    print("Exiting the program.")
 
 
 if __name__ == "__main__":
