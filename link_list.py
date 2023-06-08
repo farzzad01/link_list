@@ -29,7 +29,20 @@ class LinkedList:
             self.head = self.head.next
             return
 
-        
+        current = self.head
+        prev = None
+        while current and current.student_number != student_number:
+            prev = current
+            current = current.next
+
+        if current:
+            prev.next = current.next
+
+    def display_students(self):
+        current = self.head
+        while current:
+            print(f"Name: {current.name}, Lastname: {current.lastname}, Student Number: {current.student_number}")
+            current = current.next
 
 
 
