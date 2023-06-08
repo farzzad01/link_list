@@ -15,7 +15,19 @@ class LinkedList:
 
         if self.head is None:
             self.head = new_node
-        
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+
+    def delete_student(self, student_number):
+        if self.head is None:
+            return
+
+        if self.head.student_number == student_number:
+            self.head = self.head.next
+            return
 
         
 
